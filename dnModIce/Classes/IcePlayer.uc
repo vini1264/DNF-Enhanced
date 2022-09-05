@@ -531,6 +531,13 @@ event Tick(float DeltaTime)
 	}
 }
 
+exec function quicksave()
+{
+	ConsoleCommand("save_mode 0");
+    ConsoleCommand("savegame");
+    return;
+}
+
 defaultproperties
 {
 	SprintTotalTime=100000
