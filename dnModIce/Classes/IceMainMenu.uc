@@ -38,19 +38,18 @@ function Created()
 	ExitButton.SetText("Exit");
 	ExitButton.SetHelpText("Exit");
 	ExitButton.Register(self);
-	
+
 	FirstControlToFocus = SinglePlayerButton;
 	SinglePlayerButton.NavUp = ExitButton;
-    	SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
+    SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
 	LocalMultiplayerGameButton.NavUp = SinglePlayerOriginalGameButton;
-    	OptionsButton.NavUp = LocalMultiplayerGameButton;
-    	ExitButton.NavUp = OptionsButton;
-    	SinglePlayerButton.NavDown = SinglePlayerOriginalGameButton;
-    	SinglePlayerOriginalGameButton.NavDown = LocalMultiplayerGameButton;
+    OptionsButton.NavUp = LocalMultiplayerGameButton;
+    ExitButton.NavUp = OptionsButton;
+    SinglePlayerButton.NavDown = SinglePlayerOriginalGameButton;
+    SinglePlayerOriginalGameButton.NavDown = LocalMultiplayerGameButton;
 	LocalMultiplayerGameButton.NavDown = OptionsButton;
-    	OptionsButton.NavDown = ExitButton;
+    OptionsButton.NavDown = ExitButton;
 	ExitButton.NavDown = SinglePlayerButton;
-
 }
 
 function Paint(Canvas C, float X, float Y)
@@ -96,7 +95,7 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 
 	if(c == SinglePlayerOriginalGameButton && E == 2)
 	{
-		GetPlayerOwner().ClientTravel("map00_ice?Game=dnModIce.IceGame", TRAVEL_Relative, false);	
+		NavigateForward(class'IceNewGame');	
 	}
 
 	if(c == LocalMultiplayerGameButton && E == 2)

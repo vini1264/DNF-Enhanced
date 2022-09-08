@@ -14,8 +14,10 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 defaultproperties
 {
 	DisplayModes16x9(0)="1280x720"
-	DisplayModes16x9(1)="1440x810"
-	DisplayModes16x9(2)="1600x900"
-	DisplayModes16x9(3)="1920x1080"
-	DisplayModes16x9(4)="2560x1600"
+	DisplayModes16x9(1)="1360x768"
+	DisplayModes16x9(2)="1366x768"
+	DisplayModes16x9(3)="1440x810"
+	DisplayModes16x9(4)="1600x900"
+	DisplayModes16x9(5)="1920x1080"
+	DisplayModes16x9(6)="2560x1600"
 }
