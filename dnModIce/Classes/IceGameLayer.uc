@@ -1,0 +1,1 @@
+class IceGameLayer extends IceGame;
