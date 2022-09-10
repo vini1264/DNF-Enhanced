@@ -24,12 +24,6 @@ function Paint(Canvas C, float X, float Y)
 
 function NotifyFromControl(UWindowDialogControl C, byte E)
 {	
-	if(C == NewGameButton && E == 2)
-	{
-		NavigateForward(class'IceDifficulty');
-		return;
-	}
-	
 	if(C == ChapterSelectButton && E == 2)
 	{
 		NavigateForward(class'IceChapterSelect');
