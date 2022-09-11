@@ -4,5 +4,5 @@ defaultproperties
 {
 	FOVMin=55
 	FOVMax=120
-	bShowFOVWarning=false
+	bShowFOVWarning=false;
 }

@@ -14,6 +14,13 @@ function ShowUWindowSystem(UWindowRootWindow.EUWindowMode NewWindowMode)
 	if(NewWindowMode <= EUWindowMode_ReturnToMainMenu)
 	{
 		LoadFirstScene(class'IceMainMenu');
+		IcePlayer(Root.GetPlayerOwner()).enablequicksave();
+		return;	
+	}
+	else
+	{
+		LoadFirstScene(class'IcePauseMenu');
+		BackgroundMovieMaterial=none;
 		return;	
 	}
 	else
@@ -36,4 +43,5 @@ function FixUpUWindow()
 {
 	super.FixUpUWindow();
 	UWindowScene(FirstChildWindow).bMenuMusic = false;
+	UWindowScene(FirstChildWindow).LogoTexture = Texture'MenuLogo.Logo.newlogo';
 }

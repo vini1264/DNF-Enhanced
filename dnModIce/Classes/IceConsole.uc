@@ -30,7 +30,13 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 
 		return true;
 	}
-
+	
+	if(Action == 1 && Key == 116)
+	{
+		IcePlayer(Root.GetPlayerOwner()).quicksave();
+		return true;
+	}
+	
 	if(!bShowConsole)
 	{
 		if(Action == 1 && Key == IK_1)
