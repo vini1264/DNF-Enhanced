@@ -4,9 +4,9 @@
 class IceMainMenu extends UDukeSceneMainMenuPAX;
 
 var UDukeMenuButton SinglePlayerButton;
-var UDukeMenuButton SinglePlayerOriginalGameButton;
 var UDukeMenuButton LocalMultiplayerGameButton;
 var UDukeMenuButton OptionsButton;
+var UDukeMenuButton ExtraButton;
 var UDukeMenuButton ExitButton;
 
 // var IceSceneHelpOptions videoOptions; // Don't use this or remove it! This helps the unreal compiler find this class!
@@ -15,19 +15,19 @@ function Created()
 {
 	super(UWindowScene).Created();
 	SinglePlayerButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
-	SinglePlayerButton.SetText("Play Ice Campaign");
-	SinglePlayerButton.SetHelpText("Play Ice Campaign");
+	SinglePlayerButton.SetText("Play Campaign");
+	SinglePlayerButton.SetHelpText("Play Campaign");
 	SinglePlayerButton.Register(self);
-
-	SinglePlayerOriginalGameButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
-	SinglePlayerOriginalGameButton.SetText("Play Retail Campaign");
-	SinglePlayerOriginalGameButton.SetHelpText("Play Retail Campaign");
-	SinglePlayerOriginalGameButton.Register(self);
 
 	LocalMultiplayerGameButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
 	LocalMultiplayerGameButton.SetText("Local Multiplayer");
 	LocalMultiplayerGameButton.SetHelpText("Local Multiplayer");
 	LocalMultiplayerGameButton.Register(self);
+	
+	ExtraButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
+	ExtraButton.SetText("Extras");
+	ExtraButton.SetHelpText("Extras");
+	ExtraButton.Register(self);
 
 	OptionsButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
 	OptionsButton.SetText("Options");
@@ -41,14 +41,14 @@ function Created()
 
 	FirstControlToFocus = SinglePlayerButton;
 	SinglePlayerButton.NavUp = ExitButton;
-    SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
-	LocalMultiplayerGameButton.NavUp = SinglePlayerOriginalGameButton;
+	LocalMultiplayerGameButton.NavUp = SinglePlayerButton;
     OptionsButton.NavUp = LocalMultiplayerGameButton;
-    ExitButton.NavUp = OptionsButton;
-    SinglePlayerButton.NavDown = SinglePlayerOriginalGameButton;
-    SinglePlayerOriginalGameButton.NavDown = LocalMultiplayerGameButton;
+	ExtraButton.NavUp = OptionsButton;
+    ExitButton.NavUp = ExtraButton;
+    SinglePlayerButton.NavDown = LocalMultiplayerGameButton;
 	LocalMultiplayerGameButton.NavDown = OptionsButton;
-    OptionsButton.NavDown = ExitButton;
+    OptionsButton.NavDown = ExtraButton;
+	ExtraButton.NavDown = ExitButton;
 	ExitButton.NavDown = SinglePlayerButton;
 }
 
@@ -60,40 +60,36 @@ function Paint(Canvas C, float X, float Y)
 	SinglePlayerButton.WinLeft = float(ButtonLeft);
 	SinglePlayerButton.WinTop = float(ControlStart);
 
-	SinglePlayerOriginalGameButton.Alpha = FadeAlpha;
-	SinglePlayerOriginalGameButton.WinWidth = float(ButtonWidth);
-	SinglePlayerOriginalGameButton.WinHeight = float(ButtonHeight);
-	SinglePlayerOriginalGameButton.WinLeft = float(ButtonLeft);
-	SinglePlayerOriginalGameButton.WinTop = SinglePlayerButton.WinTop + SinglePlayerButton.WinHeight;
-
 	LocalMultiplayerGameButton.Alpha = FadeAlpha;
 	LocalMultiplayerGameButton.WinWidth = float(ButtonWidth);
 	LocalMultiplayerGameButton.WinHeight = float(ButtonHeight);
 	LocalMultiplayerGameButton.WinLeft = float(ButtonLeft);
-	LocalMultiplayerGameButton.WinTop = SinglePlayerOriginalGameButton.WinTop + SinglePlayerOriginalGameButton.WinHeight;
+	LocalMultiplayerGameButton.WinTop = SinglePlayerButton.WinTop + SinglePlayerButton.WinHeight;
 
 	OptionsButton.Alpha = FadeAlpha;
 	OptionsButton.WinWidth = float(ButtonWidth);
 	OptionsButton.WinHeight = float(ButtonHeight);
 	OptionsButton.WinLeft = float(ButtonLeft);
 	OptionsButton.WinTop = LocalMultiplayerGameButton.WinTop + LocalMultiplayerGameButton.WinHeight;
+	
+	ExtraButton.Alpha = FadeAlpha;
+	ExtraButton.WinWidth = float(ButtonWidth);
+	ExtraButton.WinHeight = float(ButtonHeight);
+	ExtraButton.WinLeft = float(ButtonLeft);
+	ExtraButton.WinTop = float(ControlStart);
+	ExtraButton.WinTop = OptionsButton.WinTop + OptionsButton.WinHeight;
 
 	ExitButton.Alpha = FadeAlpha;
 	ExitButton.WinWidth = float(ButtonWidth);
 	ExitButton.WinHeight = float(ButtonHeight);
 	ExitButton.WinLeft = float(ButtonLeft);
-	ExitButton.WinTop = OptionsButton.WinTop + OptionsButton.WinHeight;
+	ExitButton.WinTop = ExtraButton.WinTop + ExtraButton.WinHeight;
 	super(UWindowScene).Paint(C, X, Y);
 }
 
 function NotifyFromControl(UWindowDialogControl C, byte E)
 {
-	if(C == SinglePlayerButton && E == 2)
-	{				
-		GetPlayerOwner().ClientTravel("ice_map00?Game=dnModIce.IceGame", TRAVEL_Relative, false);
-	}
-
-	if(c == SinglePlayerOriginalGameButton && E == 2)
+	if(c == SinglePlayerButton && E == 2)
 	{
 		NavigateForward(class'IceNewGame');	
 	}
@@ -102,15 +98,20 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 	{
 		GetPlayerOwner().ClientTravel("DM-Casino?Listen?Game=dnModIce.IceGameDeathmatch", TRAVEL_Relative, false);	
 	}
+	
+	if(C == ExtraButton && E == 2)
+	{
+		NavigateForward(class'IceExtras');	
+	}
+	
+	if(C == OptionsButton && E == 2)
+	{
+		NavigateForward(class'IceSceneHelpOptions');	
+	}
 
 	if(C == ExitButton && E == 2)
 	{
 		GetPlayerOwner().ConsoleCommand("quit");
-	}
-
-	if(C == OptionsButton && E == 2)
-	{
-		NavigateForward(class'IceSceneHelpOptions');	
 	}
 }
 
