@@ -128,3 +128,8 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 		return;
 	}
 }	
+
+defaultproperties
+{
+	TitleText="<?int?dnModIce.IceExtras.TitleText?>"
+}
