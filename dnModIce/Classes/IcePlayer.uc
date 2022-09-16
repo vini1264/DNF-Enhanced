@@ -1,7 +1,7 @@
 class IcePlayer extends DukePlayer;
 
 // Remove the 3 weapon limit.
-var Weapon InvWeapons[10];
+var travel Weapon InvWeapons[10];
 var int CurrentWeaponId;
 
 simulated event HandlePickup(Inventory Inv, Pickup PickupRef, float Count)
@@ -329,7 +329,7 @@ simulated function ChangeToWeapon(Weapon NewWeapon)
 	{
 		if(InvWeapons[2] == none)
 		{
-			InvWeapons[2] = NewWeapon;			
+			InvWeapons[2] = NewWeapon;	
 		}
 	}
 
@@ -339,6 +339,7 @@ simulated function ChangeToWeapon(Weapon NewWeapon)
 		{
 			InvWeapons[3] = NewWeapon;
 		}
+		
 	}
 
 	if(Machinegun(NewWeapon) != none)
@@ -357,7 +358,7 @@ simulated function ChangeToWeapon(Weapon NewWeapon)
 		}
 	}
 
-	if(PipeBomb(NewWeapon) != none)
+	if(RailGun(NewWeapon) != none)
 	{
 		if(InvWeapons[6] == none)
 		{
@@ -418,7 +419,11 @@ function NotifyAfterLevelChange()
 	InventoryActivate(InvWeapons[1]);
 }
 
-
+exec function LocalTravel(string URL)
+{
+	InstigateClientTravel(URL, TRAVEL_Relative, true);
+    return;
+}
 
 exec function SelectNextWeapon()
 {
@@ -464,7 +469,6 @@ exec function SelectWeapon1()
 
 exec function SelectWeapon2()
 {
-
 	return;
 }
 
@@ -550,6 +554,7 @@ defaultproperties
 	EgoCap=100;
 	Ego=100;
 	VehiclePOV=0
+	bCanSprint=false
 	TargetWalkSpeedEx=390
 	WalkSpeedEx=390	
 	TargetJumpSpeedEx=420
