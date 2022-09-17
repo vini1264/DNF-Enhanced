@@ -31,6 +31,12 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 		return true;
 	}
 	
+	if(Action == 1 && Key == 81)
+	{
+		DukePlayer(Root.GetPlayerOwner()).StartKick();
+		return true;
+	}
+	
 	if(Action == 1 && Key == 116)
 	{
 		IcePlayer(Root.GetPlayerOwner()).quicksave();
