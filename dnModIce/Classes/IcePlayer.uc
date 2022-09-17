@@ -553,6 +553,7 @@ defaultproperties
 	HealthCap=100;
 	EgoCap=100;
 	Ego=100;
+	HoldBreathTime=45
 	VehiclePOV=0
 	bCanSprint=false
 	TargetWalkSpeedEx=390
