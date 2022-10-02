@@ -115,20 +115,19 @@ HRESULT __stdcall D3DXCompileShader2(LPCSTR pSrcData, UINT srcDataLen, const D3D
 	HRESULT hr = D3DXCompileShaderActual(pSrcData, srcDataLen, pDefines, pInclude, pFunctionName, pProfile, Flags, ppShader, ppErrorMsgs, ppConstantTable);
 	if (hr != S_OK || *ppShader == nullptr)
 		return hr;
-#if 0
 	{
 		FILE* f = fopen(path2, "wb");
 		fwrite(pSrcData, 1, srcDataLen, f);
 		fclose(f);
 	}
 
-	//FILE* f = fopen(path, "wb");
-	//
-	//ID3DXBuffer* newShader = *ppShader;
-	//
-	//fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
-	//fclose(f);
-#endif
+	FILE* f = fopen(path, "wb");
+	
+	ID3DXBuffer* newShader = *ppShader;
+	
+	fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
+	fclose(f);
+
 	return hr;
 }
 
