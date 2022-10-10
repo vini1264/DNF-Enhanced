@@ -3,6 +3,7 @@ class IceHUD extends DukeHUD;
 var Color YellowBar;
 var MaterialEx dnCrosshair;
 var float BarOffset;
+var MaterialEx WeaponWheel;
 var texture GradientTexture;
 var texture IndexBarLeftTexture;
 var texture IndexBarBottomTexture;
@@ -33,7 +34,7 @@ simulated event PreRender(Canvas Canvas)
 {
 
 }
-
+	
 simulated function DrawNewCrosshair(Canvas C)
 {
 	local int width;
@@ -79,10 +80,12 @@ simulated event PostPostRender(Canvas C)
 
 	DrawNewCrosshair(C);
 
-	backScaleX = ScaleWidth(C, 1.41);
-	backScaleY = ScaleHeight(C, 1.41);
+	backScaleX = ScaleWidth(C, 0.91);
+	backScaleY = ScaleHeight(C, 0.91);
 
-	C.Font = font'BlockFont';
+	C.Font = Font'BlockFont';
+	
+	DrawAmmoRoster(C);
 
 	ego = PlayerOwner.Ego;
 
@@ -123,37 +126,36 @@ simulated event PostPostRender(Canvas C)
 
 	// Draw the index background bar.
 	C.DrawColor = YellowBar;
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 143));	
+	C.SetPos(0, C.SizeY-ScaleHeight(C, 233));	
 	C.DrawScaledIcon(IndexBarLeftTexture, backScaleX, backScaleY);
+	
+	// C.DrawColor = YellowBar;
+	// C.SetPos(450, C.SizeY-ScaleHeight(C, 650));
+	// C.DrawScaledIcon(WeaponWheel, backScaleX, backScaleY);
 
-	C.DrawColor = WhiteColor;
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 109));
-	C.DrawText("EGO:",,,,minorHudTextSize,minorHudTextSize);
-	DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 117), ScaleWidth(C, 233), ScaleHeight(C, 36), egoPerct);
-	C.SetPos(ScaleWidth(C, 310), C.SizeY-ScaleHeight(C, 113));
+	C.DrawColor = YellowBar;
+	DrawStatusBar(C, ScaleWidth(C, 108), C.SizeY-ScaleHeight(C, 127), ScaleWidth(C, 184), ScaleHeight(C, 36), egoPerct);
+	C.SetPos(ScaleWidth(C, 305), C.SizeY-ScaleHeight(C, 123));
 	C.DrawText("" $ ego,,,,majorHudTextSize,majorHudTextSize);
 	
 	if(PlayerOwner.Weapon != none && PlayerOwner.Weapon.GetMaximumAmmo() > 0)
 	{
-		C.SetPos(0, C.SizeY-ScaleHeight(C, 82));
-		C.DrawText("CLIP:",,,,minorHudTextSize,minorHudTextSize);
-		DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 90), ScaleWidth(C, 166), ScaleHeight(C, 36), ammoPerct);
-		C.SetPos(ScaleWidth(C, 250), C.SizeY-ScaleHeight(C, 86));
+		DrawStatusBar(C, ScaleWidth(C, 120), C.SizeY-ScaleHeight(C, 100), ScaleWidth(C, 166), ScaleHeight(C, 36), ammoPerct);
+		C.SetPos(ScaleWidth(C, 300), C.SizeY-ScaleHeight(C, 96));
 		C.DrawText("" $ loadedAmmo,,,,majorHudTextSize,majorHudTextSize);
 
-		C.SetPos(0, C.SizeY-ScaleHeight(C, 55));
-		C.DrawText("AMMO:",,,,minorHudTextSize,minorHudTextSize);
-		C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 55));
+		C.SetPos(ScaleWidth(C, 155), C.SizeY-ScaleHeight(C, 33));
 		C.DrawText("" $ currentAmmo,,,,minorHudTextSize,minorHudTextSize);
 	}
 }
 
 defaultproperties
 {
-	YellowBar=(R=220,G=220,B=46,A=0)
+	YellowBar=(R=40,G=106,B=254,A=0)
 	dnCrosshair=hud_effects.crosshairs.crosshair11BC
     GradientTexture=hud_effects.ingame_hud.ing_gradient1BC
-	IndexBarLeftTexture=hud_effects.ingame_hud.ingame_main
+	IndexBarLeftTexture=HDHud.Hud.NewHud
+	WeaponWheel=HDHud.Hud.weaponwheel
 	IndexBarBottomTexture=hud_effects.ingame_hud.ingame_main_repeat1bc
 	InventoryBarTopTexture=hud_effects.ingame_hud.ingame_wepbar1BC
 	InventoryBarBotTexture=hud_effects.ingame_hud.ingame_wepbar2BC
