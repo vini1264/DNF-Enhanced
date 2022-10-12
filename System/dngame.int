@@ -1,0 +1,698 @@
+[Public]
+Preferences=(Caption="Basic Multiplayer", Parent="Advanced Options")
+Preferences=(Caption="Multiplayer",Parent="Basic Multiplayer",Class=dnGame.dnDeathmatchGame,Immediate=True)
+Preferences=(Caption="Team Multiplayer",Parent="Basic Multiplayer",Class=dnGame.dnDeathmatchGame_TeamDM,Immediate=True)
+Preferences=(Caption="Other",Parent="Basic Multiplayer",Class=dnGame.dnMultiplayer,Immediate=True)
+Preferences=(Caption="Game Types", Parent="Advanced Options")
+Preferences=(Caption="Capture The Babe",Parent="Game Types",Class=dnGame.dnCaptureTheBabe,Immediate=True)
+Preferences=(Caption="Hail To The King",Parent="Game Types",Class=dnGame.dnKingOfTheHill,Immediate=True)
+
+[DukeHUD]
+CheckpointMessage=Game saved.
+WritingCheckpointMessage=Saving content. Please don't turn off your console.
+ThrowMessage=Throw
+DropMessage=Drop
+MaxEgoCapHintMessage=Increase your Ego by interacting with special objects in the world
+MaxEgoCapMessage=Maximum Ego Increased
+MaxEgoCapAcheivedMessage=Maximum Ego Achieved
+EgoMeterText=EGO
+SpectatorMessage=Spectator Mode
+SpectatorModeMessage=Fly Mode
+SpectatorViewingMessage=Currently Viewing:
+TemperatureText=F
+LMBText=LMB
+RMBText=RMB
+SPCText=SPC
+ENTText=ENT
+MMBText=MMB
+ShiftText=Shift
+MWUText=MWU
+MWDText=MWD
+UpText=Up
+DownText=Dwn
+LeftText=Lft
+RightText=Rht
+
+[DukePlayer]
+RestartLevelText=Press any key to restart the level
+LoadLastCheckpointText=Press any key to load the last checkpoint
+SteroidsHintMessage=Taking Steroids makes your melee attacks stronger
+BeerHintMessage=Drinking Beer makes you tougher
+HolodukeHintMessage=Use the Holoduke to distract enemies
+InfiniteAmmoHintMessage=Use Ammo Crates and Ammo Piles to replenish ammo
+
+[DukeMultiplayerAssets]
+PlayerTitles(0)=" "
+PlayerTitles(1)=Noob
+PlayerTitles(2)=Casual
+PlayerTitles(3)=Experienced
+PlayerTitles(4)=Hardcore
+PlayerTitles(5)=WHAT THE FUCK?
+
+
+[VehicleBase]
+UsePhrase=Flip
+
+[dnControl_Execution]
+UsePhrase=Execute
+
+[BiteDamage]
+DeathMessage=%o was bitten by %k
+SuicideDeathMessage=%o bit %s to death
+
+[VehicleSpaceBase]
+FlipMessage=Flip
+UsePhrase=Drive
+
+[RailgunDamage]
+DamageName=Railgun
+DeathMessage=%o was railed by %k
+SuicideDeathMessage=%o shot %s with a railgun
+
+[BulletDamage]
+DamageName=Bullet
+DeathMessage=%o was shot by %k
+SuicideDeathMessage=%o shot %s
+
+[Snacks_Generic]
+UsePhrase=Grab
+GrabUsePhrase=Eat
+
+[DA_HUD_UsePhrase_TurnOn]
+UsePhrase=Turn On
+
+[DA_HUD_UsePhrase_TurnOff]
+UsePhrase=Turn Off
+
+[DA_HUD_UsePhrase_Open]
+UsePhrase=Open
+
+[DA_HUD_UsePhrase_Close]
+UsePhrase=Close
+
+[DA_HUD_UsePhrase_Eat]
+UsePhrase=Eat
+
+[dnPrivateMessage]
+PrivateString=(Private):
+
+[TentacleDamage]
+DeathMessage=%o was lashed by %k
+SuicideDeathMessage=%o lashed %s
+
+[RocketDamage]
+DamageName=RPG
+DeathMessage=%o was blown up by a RPG from %k
+SuicideDeathMessage=%o blew %s up with an RPG
+
+[GrenadeDamage]
+DamageName=Grenade
+DeathMessage=%o was blown up by %k's grenade
+SuicideDeathMessage=%o fragged %s with a grenade
+
+[PipeBombDamage]
+DamageName=Pipe Bomb
+DeathMessage=%o was blown up by a Pipe Bomb from %k
+SuicideDeathMessage=%o blew %s up with an PipeBomb
+
+[DevastatorDamage]
+DamageName=Devastator
+DeathMessage=%o was blown up by a Devastator from %k
+SuicideDeathMessage=%o blew %s up with an Devastator
+
+[MachineGunDamage]
+DamageName=Machine Gun
+DeathMessage=%o was perforated by %k's M16
+SuicideDeathMessage=%o shot %s with an M16
+
+[ShotgunDamage]
+DamageName=Shotgun
+DeathMessage=%o was shotgunned down by %k
+SuicideDeathMessage=%o shot %s with a shotgun
+
+[PistolDamage]
+DamageName=Desert Eagle
+DeathMessage=%o was shot by %k's desert eagle
+SuicideDeathMessage=%o shot %s with a desert eagle
+
+[TriggerHint_UseWeapon]
+Message=Press $Key(Fire) to Fire and $Key(Zoom) to Zoom
+
+[TriggerHint_SwapWeapons]
+Message=Press $Key(SwapWeapons) to change weapons
+MessageMW=Press $Key(SwapWeapons) or $Key(SwapWeaponsU) or $Key(SwapWeaponsD) to change weapons
+MessageMWU=Press $Key(SwapWeapons) or $Key(SwapWeaponsU) to change weapons
+MessageMWD=Press $Key(SwapWeapons) or $Key(SwapWeaponsD) to change weapons
+MessageMWOnly=Press $Key(SwapWeaponsU) or $Key(SwapWeaponsD) to change weapons
+
+[TriggerHint_UseSteroids]
+Message=Press $Key(UseSteroids) to use Steroids
+
+[TriggerHint_DrinkBeer]
+Message=Press $Key(UseBeer) to drink Beer
+
+[TriggerHint_UseHoloduke]
+Message=Press $Key(DoHoloDuke) to use the Holoduke
+
+[dnDeathMessage]
+KilledSelfMessage=You killed yourself.
+MaleGenderName=himself
+FemaleGenderName=herself
+
+[CannonDamage]
+DamageName=Cannon
+DeathMessage=%o was gunned down by a cannon operated by %k
+SuicideDeathMessage=%o misused a cannon
+
+[MachinegunTurretDamage]
+DamageName=Machine Gun Turret
+DeathMessage=%o was gunned down by a turret operated by %k
+SuicideDeathMessage=%o misused a turret
+
+[MightyFootDamage]
+DamageName=Mighty Foot
+DeathMessage=%o was kicked in the ass by %k
+SuicideDeathMessage=%o kicked %s in the ass
+WeaponSpreePhrase=Ass Kicker!
+
+[dnFirstBloodMessage]
+FirstBloodString=drew first blood!
+
+[dnMultiKillMessage]
+KillString[0]=Multi-Kill!
+KillString[1]=Multi-Kill!
+KillString[2]=Multi-Kill!
+KillString[3]=Multi-Kill!
+KillString[4]=Multi-Kill!
+KillString[5]=Multi-Kill!
+KillString[6]=Multi-Kill!
+
+[dnKillingSpreeMessage]
+EndSpreeNote='s killing spree was ended by
+EndSelfSpree=was looking good till he killed himself!
+EndFemaleSpree=was looking good till she killed herself!
+SpreeNote[0]=is on a killing spree!
+SpreeNote[1]=is on a rampage!
+SpreeNote[2]=is unstoppable!
+SpreeNote[3]=is un-FUCKING-believable!
+
+[TransferredDamage]
+DamageName=Transferred
+
+[LaserMineDamage]
+DamageName=Laser Mine
+DeathMessage=%o tripped over %k's laser mine
+SuicideDeathMessage=%o tripped over their own lasermine
+
+[ATLaserDamage]
+DamageName=Assault Trooper Laser
+
+[LaserDamage]
+DamageName=Laser
+
+[ATCaptainLaserDamage]
+DamageName=Assault Trooper Captain Laser
+
+[AlienSludgeSubmergedDamage]
+DeathMessage=%o was drowned in the Alien Sludge by %k
+SuicideDeathMessage=%o drowned in the Alien Sludge
+
+[MicrowaveDamage]
+DamageName=Microwave
+DeathMessage=%o was microwaved by %k
+SuicideDeathMessage=%o microwaved %s
+
+[SlicingDamage]
+DeathMessage=%o was sliced by %k
+SuicideDeathMessage=%o sliced %s
+
+[WaterVolume]
+LocationName=Underwater
+
+[BrainBlastDamage]
+DamageName=BrainBlast
+DeathMessage=%o was blown up by a BrainBlast from %k
+SuicideDeathMessage=%o blew %s up with a BrainBlast
+
+[dnControl_EnergyCell_Housing]
+UsePhrase=Insert Energy Cell
+
+[dnControl_WallBombSurface]
+UsePhrase=Plant Bomb
+
+[FighterLaserDamage]
+DamageName=Alien Fighter
+
+[FrozenShatterDamage]
+DamageName=Shatter
+DeathMessage=%o was shattered by %k
+SuicideDeathMessage=%o shattered
+
+[SuperTurretDamage]
+DamageName=SuperTurret
+DeathMessage=%o was railed by %k
+SuicideDeathMessage=%o railed %s
+
+[dnTeamGameMessage]
+HumansWinString=Humans win the round.
+BugsWinString=Bugs win the round.
+TieGameString=Nobody wins the round.
+CantChangeClass_Time=It is too late to change your class
+CantChangeClass_Credits=You don't have enough credits to change to that class
+CantChangeClass_Unknown=Can't change to that class - It is unknown.
+
+[AlienSludgeDamage]
+DeathMessage=%o was fried in the Alien Sludge by %k
+SuicideDeathMessage=%o fried in the Alien Sludge
+
+[EnforcerGunDamage]
+DamageName=EnforcerGun
+
+[dnControl_Chair]
+UsePhrase=Sit Down
+
+[WallBomb]
+QuestItemTip=Plant the Wall Bombs at the base of the dam
+
+[NukeDamage]
+DamageName=Nuke
+DeathMessage=%o nuked by RPG %k
+SuicideDeathMessage=%o nuked %s
+
+[dnVictimMessage]
+YouWereKilledBy=You were killed by
+KilledByTrailer=!
+
+[dnKillerMessage]
+YouKilled=You killed
+
+[EnergyCell]
+QuestItemTip=Place the Energy Cell in the main reactor
+
+[dnBreakableGlass_Mirror_Usable]
+UsePhrase=Admire
+
+[dnTimeWarningMessage]
+TwoMinuteWarning=Two Minute Warning!
+OneMinuteWarning=One Minute Warning!
+ThirtySecondWarning=Thirty Second Warning!
+FiveSecondWarning=Five Seconds Left!
+
+[dnCaptureTheBabe_Babe]
+UsePhrase=Grab
+GrabUsePhrase=Spank
+
+[dnDeathmatchMessage]
+GlobalNameChange=changed name to
+NewTeamMessage=is now a
+NewTeamMessageTrailer=.
+
+[dnControl_Bathroom_UrinationReceptacle]
+GrabUseCombinePhrase=Flush It
+PissPhrase=Piss
+
+[dnKotHVolume]
+LocationName=KotH Volume
+
+[dnControl_BookSigning]
+UsePhrase=Autograph
+
+[dnControl_CoinOp]
+UsePhrase=Play
+InsertCoinText=Insert Coin
+
+[dnChangeroom]
+GameName=CHANGE ROOM
+
+[dnMyDigs]
+GameName=MY DIGS
+
+[dnCaptureTheBabe]
+RulesMessage0=CAPTURE THE ENEMY BABE AND RETURN HER TO YOUR BASE
+GameGoalPrefix=" "
+GameGoal=BABE CAPTURES WINS THE GAME
+GameName=CAPTURE THE BABE
+TeamNames0=BLUE
+TeamNames1=RED
+TeamNamesMessages0=BLUE
+TeamNamesMessages1=RED
+StartupTeamMessage=YOU ARE ON THE
+StartupTeamTrailer= TEAM
+ShortGameName=CTB
+MapPrefix=DM-
+BeaconName=!Z
+FriendlyFireOnMessage=" "
+FriendlyFireOffMessage=" "
+TimeLimitMessageStart=TIME LIMIT:
+TimeLimitMessageEnd=MINUTES
+
+[dnKingOfTheHill]
+RulesMessage0=HOLD THE POINT ON THE MAP TO SCORE POINTS
+GameGoal=CAPTURE POINTS WINS THE MATCH
+GameName=HAIL TO THE KING
+TeamNames0=BLUE
+TeamNames1=RED
+TeamNamesMessages0=BLUE
+TeamNamesMessages1=RED
+StartupTeamMessage=YOU ARE ON THE
+StartupTeamTrailer= TEAM
+ShortGameName=HTTK
+MapPrefix=DM-
+BeaconName=!Z
+GameGoalPrefix=" "
+FriendlyFireOnMessage=" "
+FriendlyFireOffMessage=" "
+TimeLimitMessageStart=TIME LIMIT:
+TimeLimitMessageEnd=MINUTES
+
+[dnDeathmatchGame]
+StartMessage=The match has begun!
+CountdownMessage= seconds until match starts!
+WaitingMessage1=Waiting for ready signals.
+WaitingMessage2=(Use your fire button to toggle ready!)
+ReadyMessage=You are READY!
+NotReadyMessage=You are NOT READY!
+GameGoalPrefix=" "
+GameGoal=KILLS WINS THE MATCH
+RulesMessage0=EVERYONE FOR THEMSELVES
+TimeLimitMessageStart=TIME LIMIT:
+TimeLimitMessageEnd=MINUTES
+EndRoundMessage=Round over!
+GameEndedMessage=wins the match!
+GameName=DUKE MATCH
+ShortGameName=DM
+MapPrefix=DM-
+BeaconName=!Z
+
+[dnDeathmatchGame_TeamDM]
+StartupTeamMessage=YOU ARE ON THE
+StartupTeamTrailer= TEAM
+TiedGameEndedMessage=GAME TIED
+TeamNames0=BLUE
+TeamNames1=RED
+TeamNamesMessages0=BLUE
+TeamNamesMessages1=RED
+TeamNames[0]=BLUE
+TeamNames[1]=RED
+TeamPrefix=Team
+FriendlyFireOnMessage=" "
+FriendlyFireOffMessage=" "
+RulesMessage0=RED TEAM VS. BLUE TEAM
+GameName=TEAM DUKE MATCH
+ShortGameName=TEAM DM
+GameEndedMessage=wins the match!
+TiedGameEndedMessage=The game ended in a tie.
+GameGoalPrefix=" "
+GameGoal=TEAM POINTS WINS THE MATCH
+ChangeTeamMessage= joined the
+ChangeTeamMessageTrailer= team.
+TimeLimitMessageStart=TIME LIMIT:
+TimeLimitMessageEnd=MINUTES
+
+[dnTeamGameScoreboard]
+TeamName[0]=BLUE - Kills/Deaths
+TeamName[1]=RED - Kills/Deaths
+OrdersString=Orders:
+InString=Location:
+PlayersNotShown=Player[s] not shown.
+
+[dnDeathmatchGameHUD]
+IdentifyName=Name
+IdentifyHealth=Health
+TeamKillMessage=" (Team Kill)"
+RankString=You Are In
+PlaceString=Place
+TiedString=You Are Tied For
+RankStringNoCaps=You are in
+PlaceStringNoCaps=place.
+TiedStringNoCaps=You are tied for
+WarmupPrefixString=Match Starting In
+targetScoreString="PLAYING TO: "
+
+[dnDeathmatchGameScoreboard]
+Restart=You are dead.  Hit [Fire] to respawn!
+Continue=" Hit [Fire] to continue!"
+Ended=The match has ended.
+FragGoal=Frag Limit:
+TimeLimit=Time Limit:
+PlayerString=Players
+FragsString=Frags
+DeathsString=Deaths
+PingString=Ping
+TimeString=Time
+LossString=Packet Loss
+FPHString=Frags Per Hour
+
+[TriggerPlayer]
+BossMeterName=BOSS
+
+[dnMutator_InstaGib]
+MutatorName=INSTAGIB
+
+[dnMutator_InfiniteAmmo]
+MutatorName=INFINITE AMMO
+
+[MetagameHUD]
+LevelLabel=lvl {0}
+JetpackFuelLabel=Jetpack Fuel
+OverTimeStr=OVERTIME!
+FireRespawnStr=PRESS $Key(Fire) TO RESPAWN
+JumpRespawnStr=PRESS $Key(Jump) TO RESPAWN
+RespawnTimeStr=RESPAWN POSSIBLE IN {0} SECONDS
+AutoRespawnStr=AUTO-RESPAWN IN: {0}
+WaitingForPlayers=WAITING FOR PLAYERS
+BalanceTeams=PLEASE BALANCE THE TEAMS
+ExpGainStr=+{0} XP
+ExpLossStr={0} XP
+ExpTotalStr={0} XP
+LevelGainedStr=Leveled Up!
+ChallengeTitleStr=CHALLENGE COMPLETE:
+ItemTitleStr=MY DIGS ITEM UNLOCKED:
+TeamScoreStr=TEAM {0} HAS SCORED
+IndividualScoreStr={0} HAS SCORED
+CountdownMessage=" seconds until match starts!"
+EndgameWinMessage=" has won!"
+EndgameTieMessage=Game ended in a tie
+EndgameYouWonMessage=You won!
+TimeIsUpMessage=TIME'S UP!
+TimeWarningMessage=ONE MINUTE REMAINING!
+OverdriveStr=OVERDRIVE!
+MsgPrompt="Say: "
+TeamMsgPrompt="Say(Team): "
+DoubleDamage=Double Damage
+Invincibility=Invincibility
+
+
+[dnDigsHud]
+MoreInfoButtonStr=PRESS $Key(ShowDigsMoreInfoMenu) FOR MORE INFO
+MyDigsButtonStr=PRESS $Key(ShowDigsMenu) FOR APARTMENT CUSTOMIZATION
+
+[dnCTBHUD]
+strMsgBabeCarried={0} TEAM HAS STOLEN THE BABE!
+strMsgBabeScored={0} TEAM HAS CAPTURED THE BABE!
+strMsgBabeDropped={0} TEAM HAS DROPPED THE BABE!
+strMsgBabeStanding={0} BABE HAS RETURNED TO HER BASE!
+BlueStr=BLUE
+RedStr=RED
+
+[dnMutator_Knuckle]
+MutatorName=KNUCKLE SANDWICH
+
+[dnTeamDeathmatchHUD]
+TeamStr=Team:
+DefenseStr=Defense
+OffenseStr=Offense
+
+[dnMutator_Heavy]
+MutatorName=HEAVY WEAPONS
+
+[dnMutator_Shotgun]
+MutatorName=SHOTGUNS ONLY
+
+[TriggerHint_UseJetpack]
+ControllerMessage=Press $Key(Jump) while in the air to use the Jetpack
+KeyboardMessage=Press $Key(Jump) while in the air to use the Jetpack
+Message=Press $Key(Jump) while in the air to use the Jetpack
+Message_XBOX=Press $Key(Jump) while in the air to use the Jetpack
+Message_PS3=Press $Key(Jump) while in the air to use the Jetpack
+
+
+[PlayerProgression]
+ExpGain_S_Kills=Kill
+ExpGain_S_Suicide=Suicide
+ExpGain_S_TEAMCHANGESUICIDE=Team Change
+ExpGain_S_CTBCaptures=Babe Capture
+ExpGain_S_PISSESTAKEN=Pissed
+ExpGain_S_CTBKILLSOFBABECARRIER=Killed Babe Carrier
+ExpGain_S_BABERETURNS=Babe Returned
+ExpGain_S_MULTIKILL=MultiKill
+ExpGain_S_AERIALKILLS=Jetpack Kill
+ExpGain_S_KILLASSIST=Assist
+ExpGain_S_SHOTPISTOL=Overdrive Hit Bonus
+ExpGain_MATCHWON=Match Won
+ExpGain_S_JUMP=You Jumped!
+ExpGain_S_CHALLENGE="Challenge Unlock Bonus"
+ExpGain_Thaw=Defrost
+
+
+
+[dnControl_TapPowered]
+TapUsePhrase=Tap repeatedly
+
+[MP_FortyOunceBeerPickUp]
+ItemName=40oz Beer
+
+[dnCaptureTheBabe_Hand]
+UsePhrase=Grab The Babe
+GrabUsePhrase=Spank
+
+[CigarPickup]
+ItemName=Cigar
+
+[MP_PistolPickup]
+ItemName=M1911
+
+[MP_RPGPickup]
+ItemName=RPG
+
+[MP_TripminePickup]
+ItemName=Trip Mine
+
+[PistolPickup]
+ItemName=M1911
+
+[BabeGunDamage]
+DamageName=Babe Revolver
+DeathMessage=%o was killed with a six-shooter by %k
+SuicideDeathMessage=%o blew %s up with an six-shooter
+
+[MP_AtCaptainLaserPickup]
+ItemName=AT Captain Laser
+
+[MP_DevastatorPickup]
+ItemName=Devastator
+
+[MP_PipeBombPickup]
+ItemName=Pipebomb
+
+[MP_InvincibilityPickup]
+ItemName=Invincibility
+
+[MP_DamageBoosterPickup]
+ItemName=Damage Booster
+
+[MP_ShrinkrayPickup]
+ItemName=Shrink Ray
+
+[MP_ShotgunPickup]
+ItemName=Shotgun
+
+[MP_RailgunPickup]
+ItemName=Railgun
+
+[MP_MachineGunPickup]
+ItemName=Ripper
+
+[RailgunPickup]
+ItemName=Railgun
+
+[MP_FreezeRayPickup]
+ItemName=Freeze Ray
+
+[RPGPickup]
+ItemName=RPG
+
+[MP_EnforcerGunPickup]
+ItemName=Enforcer Gun
+
+[ShotgunPickup]
+ItemName=Shotgun
+
+[ShrinkRayPickup]
+ItemName=Shrink Ray
+
+[MP_AtLaserPickup]
+ItemName=AT Laser
+
+[MachineGunPickup]
+ItemName=Ripper
+
+[FreezeRayPickup]
+ItemName=Freeze Ray
+
+[FortyOunceBeerPickup]
+ItemName=40oz Beer
+
+[EnforcerGunPickup]
+ItemName=Enforcer Gun
+
+[TripMinePickup]
+ItemName=Trip Mine
+
+[WallBombPickup]
+ItemName=Wall Bomb
+
+[DevastatorPickup]
+ItemName=Devastator
+
+[ATLaserPickup]
+ItemName=AT Laser
+
+[ATCaptainLaserPickup]
+ItemName=AT Captain Laser
+
+[SteroidsPickup]
+ItemName=Steroids
+
+[PipeBombPickup]
+ItemName=Pipebomb
+
+[MP_SteroidsPickup]
+ItemName=Steroids
+
+[MP_HolodukePickup]
+ItemName=Holoduke
+
+[HolodukePickup]
+ItemName=Holoduke
+
+[dnControl_Panel]
+UsePhrase=Use
+TapScreenPhrase=Tap Screen
+
+[VideoPoker]
+HeldTexture=dt_VideoPoker.VideoPoker.heldRC
+WinTexture=dt_VideoPoker.VideoPoker.winRC
+TableDecorationTextures[0]=dt_VideoPoker.VideoPoker.betRC
+TableDecorationTextures[1]=dt_VideoPoker.VideoPoker.coinsRC
+TableDecorationTextures[2]=dt_VideoPoker.VideoPoker.drawbutonRC
+TableDecorationTextures[3]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[4]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[5]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[6]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[7]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[8]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[9]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[10]=dt_VideoPoker.VideoPoker.payoutRC
+TableDecorationTextures[11]=dt_VideoPoker.VideoPoker.payoutRC
+
+[ChallengeObject_Stat]
+ProgressLabel=PROGRESS:
+RewardLabel="REWARD: "
+XPLabel=" XP"
+
+[dnTeamSayMessage]
+TeamSay=(Team)
+
+[dnPS3SaveLoad]
+SaveDataTitle=Duke Nukem Forever
+SaveDataSubTitle=Save Data for Duke Nukem Forever
+SaveDataDetail=" "
+SaveText=Saving...
+LoadText=Loading...
+
+[dnControl_Chair_Throne]
+StandUpPrompt=Stand Up
+
+[dnControl_GasTank]
+FindGasText=Find a gas can and fill the tank
