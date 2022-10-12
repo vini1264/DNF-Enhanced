@@ -89,4 +89,6 @@ exec function DebugHUD()
 defaultproperties
 {
 	bLocked=false
+	inGameConsoleState=false
+	RootWindow="dnModIce.IceRootWindow"
 }
